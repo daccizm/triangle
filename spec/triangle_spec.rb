@@ -13,27 +13,20 @@ describe Triangle do
       end
     end
 
-    context '辺a が 0 以下の数値の場合' do
+    context '辺が 0 以下の数値の場合' do
       it '三角形ではないことを返却すること' do
         message = '三角形ではありません > <'
+        # 辺a が 0 以下の場合
         expect(Triangle.kind_of(0, 2, 2)).to eq message
         expect(Triangle.kind_of(-0.1, 2, 2)).to eq message
         expect(Triangle.kind_of(-3, 2, 2)).to eq message
-      end
-    end
 
-    context '辺b が 0 以下の数値の場合' do
-      it '三角形ではないことを返却すること' do
-        message = '三角形ではありません > <'
+        # 辺b が 0 以下の場合
         expect(Triangle.kind_of(2, 0, 2)).to eq message
         expect(Triangle.kind_of(2, -0.1, 2)).to eq message
         expect(Triangle.kind_of(2, -3, 2)).to eq message
-      end
-    end
 
-    context '辺c が 0 以下の数値の場合' do
-      it '三角形ではないことを返却すること' do
-        message = '三角形ではありません > <'
+        # 辺c が 0 以下の場合
         expect(Triangle.kind_of(2, 2, 0)).to eq message
         expect(Triangle.kind_of(2, 2, -0.1)).to eq message
         expect(Triangle.kind_of(2, 2, -3)).to eq message
