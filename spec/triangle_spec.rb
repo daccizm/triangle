@@ -4,6 +4,15 @@ require_relative '../triangle'
 
 describe Triangle do
   describe '#kind_of' do
+    context '辺が数値以外の場合' do
+      it '三角形ではないことを返却すること' do
+        message = '三角形ではありません > <'
+        expect(Triangle.kind_of('a', 1, 2)).to eq message
+        expect(Triangle.kind_of(2, 'a', 1)).to eq message
+        expect(Triangle.kind_of(1, 2, 'a')).to eq message
+      end
+    end
+
     context '辺a が 0 以下の数値の場合' do
       it '三角形ではないことを返却すること' do
         message = '三角形ではありません > <'
